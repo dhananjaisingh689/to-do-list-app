@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To Do List</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3efff;
+        }
+
+        .box {
+            background-color: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .box h1 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .box p {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .box input[type="text"] {
+            width: 68%;
+            padding: 12px;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .box button {
+            padding: 12px 18px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 25%;
+        }
+
+        .filter-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter {
+            display: inline-block;
+            background-color: rgb(222, 207, 255);
+            color: darkblue;
+            padding: 9px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .filter.active {
+            background-color: #7554d9;
+            color: white;
+        }
+
+        .task-list {
+            margin-top: 25px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            margin-bottom: 8px;
+            border: 1px solid #e5ddfa;
+            border-radius: 12px;
+        }
+
+        .task-item span {
+            flex: 1;
+            margin-left: 15px;
+            background-color: transparent;
+            color: #252544;
+            font-weight: normal;
+        }
+
+        .task-item button {
+            width: auto;
+            padding: 8px 12px;
+            background-color: transparent;
+            color: gray;
+            font-size: 18px;
+        }
+
+        .task-count {
+            text-align: center;
+            color: gray;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .box .clear-btn {
+            display: block;
+            width: auto;
+            margin: 12px auto;
+            background-color: transparent;
+            color: #777;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="box">
+
+            <h1>My To Do List</h1>
+
+            <p>Plan your day, get things done</p>
+
+            <!-- Task Input -->
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Add a new task..."
+            >
+
+            <button id="addBtn">Add Task</button>
+
+            <!-- Task Filters -->
+            <div class="filter-row">
+
+                <div class="filters">
+                    <span class="filter" id="allFilter">All</span>
+                    <span class="filter" id="activeFilter">Active</span>
+                    <span class="filter" id="completedFilter">Completed</span>
+                </div>
+
+            </div>
+
+            <!-- Task List -->
+            <div class="task-list" id="taskList">
+
+                <div class="task-item">
+                    <input type="checkbox">
+                    <span>Learn HTML</span>
+                    <button>🗑️</button>
+                </div>
+
+                <div class="task-item">
+                    <input type="checkbox">
+                    <span>Learn CSS</span>
+                    <button>🗑️</button>
+                </div>
+
+                <div class="task-item">
+                    <input type="checkbox">
+                    <span>Practice JavaScript</span>
+                    <button>🗑️</button>
+                </div>
+
+            </div>
+
+            <!-- Task Counter -->
+            <div class="task-count" id="taskCount">
+                3 tasks remaining
+            </div>
+
+            <!-- Clear All Button -->
+            <button class="clear-btn" id="clearBtn">
+                Clear All
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
